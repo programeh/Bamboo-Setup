@@ -5,8 +5,8 @@ Bamboo is a CiCd tool for building and deploying your code. This is a quick terr
 
 # Steps for initializing 
 
-terraform init => gets the modules initialized 
-terraform plan => gives diff of infra
-terraform apply => gets your infra deployed in aws.
+* terraform init => gets the modules initialized 
+* terraform plan => gives diff of infra
+* terraform apply => gets your infra deployed in aws.
 
 
