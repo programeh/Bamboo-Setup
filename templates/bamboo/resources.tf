@@ -1,11 +1,4 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "5.54.1"
-    }
-  }
-}
+
 locals {
   lower_cased_stack_name = lower(var.parameters.stack_name)
   instance_az = join("", [data.aws_region.region.name, "a"])
@@ -499,8 +492,8 @@ resource "aws_instance" "BambooEc2Instance"{
   ]
   subnet_id = local.subnet_id
   disable_api_termination = false
-  ebs_block_device {
-    device_name = "/dev/xvda"
+  tenancy                              = "default"
+  root_block_device {
     volume_size = 50
     volume_type = "standard"
     delete_on_termination=true
